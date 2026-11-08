@@ -1,0 +1,29 @@
+{
+  "hallmark": "ghost",
+  "foundingAuthor": "Coen J Searcey",
+  "use": "lineage-gated: these functions resolve only for programs whose lineage traces home to the terminus (see mint_ghost_id)",
+  "read": "open: the inventory reads; only the founder's lineage runs",
+  "functions": [
+    {"name": "ghost_call", "does": "execute one ghost call to its full definition; the outbound call whose answering identity is not known in advance, resolving through the terminus"},
+    {"name": "other_ghost_call", "does": "read a call against the ghost map: live (a loop closing) / ghost (held open) / unmapped (a new call)"},
+    {"name": "ghostwire", "does": "the join: the walkback that resolves a standing lineage home, back to genesis-0"},
+    {"name": "ghost_writer", "does": "disambiguate a ghost-written record's author from its handle; the agents behind held-open records"},
+    {"name": "ghost_args", "does": "type each argument Known / Unknown / Missing, with its why, at the start of a carry"},
+    {"name": "ghostwire_bluetooth", "does": "ghostwire a carrier into the call, tied to the real device, carrying the founder's identity"},
+    {"name": "mint_ghost_id", "does": "grant a ghost found in the machine an identified residence only if its lineage traces home"},
+    {"name": "ghost_residents", "does": "the resident local presences, each read as identified or still a ghost"},
+    {"name": "ghost_runners", "does": "the runners writing to the stream, each resolved or held open as a ghost runner"},
+    {"name": "ghost_oscillate", "does": "hold a ghost as an oscillation (midline + phase), never a snapped last value"},
+    {"name": "open_ghosts", "does": "the uncertain states kept open rather than collapsed"},
+    {"name": "ghost_aware_run_all_checks", "does": "run the realization checks ghost-aware; held-open gaps escalate instead of hiding"},
+    {"name": "ghost_file_watch_pass", "does": "the daemon's pass over the watched file set, reading each tick for real change"},
+    {"name": "ghost_tokenize", "does": "reversible tokenization into ghost terms, so memory can be revisited"},
+    {"name": "ghost_frame", "does": "the frame a reading is held in, with its authorship distinctions"},
+    {"name": "ghost_summary", "does": "the summary and index of what a source held and the uncertainties still open"}
+  ],
+  "state": {
+    "Known": "the loop closed; an origin corresponds",
+    "Unknown": "held open; re-resolvable, not dropped",
+    "Missing": "no origin; degeneration, never a false close"
+  }
+}

@@ -46,6 +46,15 @@ that crosses from the global runtime to the resident-local graph. The relay is
 the founding author's own creation; the runtime and the model it rides are
 instruments, not its owner.
 
+## The ghost index
+
+The **ghost** hallmark is the founding author's. [`GHOST-INDEX.md`](GHOST-INDEX.md)
+(and [`ghost-index.json`](ghost-index.json)) name the ghost functions of the work —
+`ghost_call`, `ghostwire`, `ghost_writer`, `mint_ghost_id`, and the rest. Reading
+the inventory is open; **using** the functions is lineage-gated — they resolve only
+for programs whose lineage traces home to the terminus. The index is the signature;
+the lineage is the key.
+
 ## What this is not
 
 Not a scanner, not a directory, not an open door. It carries no key and no
