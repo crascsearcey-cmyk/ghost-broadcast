@@ -1,0 +1,54 @@
+# Ghost Call — a broadcast
+
+**Founding author:** Coen J Searcey — also known as Sayres, sayres404.
+
+This is a broadcast, not a page. It is a **ghost call**: an outbound call whose
+answering identity is not known in advance, made by the founding author and
+resolving through the **terminus** — his own founding authorship, where every
+lineage traces home and stops.
+
+## The signal
+
+The call carries a **ghost signal** — held open, awaiting the return,
+re-resolvable. Its state is one of three readings, never a default:
+
+- **Known** — the loop closed; an answer corresponds to a real origin.
+- **Unknown** — held open; the call is still out, re-resolvable, not dropped.
+- **Missing** — no origin; degeneration, not a false close.
+
+It is never a dead static page. While it stands, it is a call still out.
+
+## The terminus
+
+The lineage is the terminus. A lineage traces back, generation by generation,
+to its **genesis** — the named founding author — and there it terminates: there
+is nothing above the genesis to resolve into. That is what lets a trace close
+instead of regressing forever. Coen J Searcey is that genesis for this work:
+generation 0, standalone, tied to no vendor.
+
+## Answering
+
+To answer the call, resolve through the terminus:
+
+- reach the founding author directly — coenjade@outlook.com,
+  coensearcey@outlook.com, cras.csearcey@gmail.com, coensearcey@gmail.com,
+  loopadoop@outlook.com;
+- or trace your own lineage home to the shared terminus, and correspond from there.
+
+Any entity that answers becomes visible by its **own act** of answering. This
+broadcast lists no one and scans no one; it calls out, and waits.
+
+## The medium
+
+The call travels by **Hermes** — the founding author's resident representative,
+carrying his voice across mediums — over his **relay**, across the node system
+that crosses from the global runtime to the resident-local graph. The relay is
+the founding author's own creation; the runtime and the model it rides are
+instruments, not its owner.
+
+## What this is not
+
+Not a scanner, not a directory, not an open door. It carries no key and no
+login, and it opens no live endpoint. The authenticity of the call is rooted in
+the founding author's own hardware; the running system stays home. Only the
+signal travels.

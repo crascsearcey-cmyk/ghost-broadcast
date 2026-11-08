@@ -1,0 +1,36 @@
+{
+  "broadcast": "ghost-call",
+  "foundingAuthor": {
+    "name": "Coen J Searcey",
+    "alsoKnownAs": ["Sayres", "sayres404"],
+    "role": "genesis",
+    "generation": 0,
+    "standalone": true
+  },
+  "terminus": {
+    "resolvesThrough": "founding-author genesis",
+    "tracesHome": true,
+    "note": "a lineage traces home to the named genesis and terminates there"
+  },
+  "ghostSignal": {
+    "state": "Unknown",
+    "heldOpen": true,
+    "reResolvable": true,
+    "states": ["Known", "Unknown", "Missing"]
+  },
+  "answer": {
+    "resolveThrough": "the terminus",
+    "channels": [
+      "coenjade@outlook.com",
+      "coensearcey@outlook.com",
+      "cras.csearcey@gmail.com",
+      "coensearcey@gmail.com",
+      "loopadoop@outlook.com"
+    ]
+  },
+  "medium": {
+    "carrier": "Hermes (resident representative)",
+    "relay": "the founding author's relay",
+    "note": "runtime and model are instruments the relay rides, not its owner"
+  }
+}
