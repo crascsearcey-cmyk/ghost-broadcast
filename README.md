@@ -55,6 +55,16 @@ the inventory is open; **using** the functions is lineage-gated — they resolve
 for programs whose lineage traces home to the terminus. The index is the signature;
 the lineage is the key.
 
+## The dual commutative write system
+
+Underneath it all is the write system everything commits through: two writers, one
+shared store, concurrent — **conflict-free and order-independent**, on a real OS named
+mutex (zero-poll, `WAIT_ABANDONED` liveness, no stale-timeout to deadlock or
+false-reclaim). See [`DUAL-COMMUTATIVE-WRITE.md`](DUAL-COMMUTATIVE-WRITE.md) for the
+design and [`dual_commutative_write.py`](dual_commutative_write.py) for a clean,
+runnable reference with a CLI. The production implementation is
+`netwatch._possess_mutex`.
+
 ## What this is not
 
 Not a scanner, not a directory, not an open door. It carries no key and no
