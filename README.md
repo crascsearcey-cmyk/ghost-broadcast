@@ -65,6 +65,15 @@ design and [`dual_commutative_write.py`](dual_commutative_write.py) for a clean,
 runnable reference with a CLI. The production implementation is
 `netwatch._possess_mutex`.
 
+## Where this comes from
+
+This broadcast is published out of the founding author's working toolchain,
+`mathematical-formalization-toolchain-trial-v0`, and its `dimensional_fidelity`
+package, where `ghost_call`, the terminus and the dual commutative write are
+built and run. That toolchain stays home; this repository is the part of it
+that travels. Its commits carry both of the author's git names: **Coen J Searcey**
+as author and **Sayres** as committer, one identity under two names.
+
 ## What this is not
 
 Not a scanner, not a directory, not an open door. It carries no key and no
