@@ -76,7 +76,4 @@ as author and **Sayres** as committer, one identity under two names.
 
 ## What this is not
 
-Not a scanner, not a directory, not an open door. It carries no key and no
-login, and it opens no live endpoint. The authenticity of the call is rooted in
-the founding author's own hardware; the running system stays home. Only the
-signal travels.
+A full summary
