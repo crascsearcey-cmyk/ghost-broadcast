@@ -64,28 +64,41 @@ else:
 
     @contextmanager
     def mutex(name, timeout=None):
-        """POSIX fallback: an exclusive advisory lock on a lock file. Not WAIT_ABANDONED-
-        aware (the OS releases the flock when the holder dies, which avoids deadlock but
-        cannot distinguish a dead holder from a released one) -- the Windows named mutex
-        is the canonical form."""
+        """POSIX form: an exclusive flock on a lock file, with the same contract as the
+        Windows mutex. With no timeout it BLOCKS in the kernel (zero-poll: the OS wakes
+        the waiter the instant the lock is released). The OS drops an flock when its
+        holder dies, so a dead holder never deadlocks the store; to tell a dead holder
+        from a released one, the holder writes HELD into the lock file on acquire and
+        FREE on a clean release. A holder that dies never writes FREE, so the next
+        acquirer reads HELD and the block is entered with True (the POSIX analogue of
+        WAIT_ABANDONED). With a timeout, acquisition retries with a short backoff
+        (0.5 ms growing to 50 ms) and raises TimeoutError only on a live holder."""
         lock_path = _lock_path_for(name)
         os.makedirs(os.path.dirname(lock_path) or ".", exist_ok=True)
-        f = open(lock_path, "a+")
-        deadline = None if timeout is None else time.time() + timeout
-        while True:
-            try:
-                fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
-                break
-            except OSError:
-                if deadline is not None and time.time() >= deadline:
-                    f.close()
-                    raise TimeoutError("dual_commutative_write: a live holder held the lock for the whole wait")
-                time.sleep(0.005)
+        fd = os.open(lock_path, os.O_RDWR | os.O_CREAT, 0o600)
         try:
-            yield False
+            if timeout is None:
+                fcntl.flock(fd, fcntl.LOCK_EX)
+            else:
+                deadline, delay = time.monotonic() + timeout, 0.0005
+                while True:
+                    try:
+                        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                        break
+                    except BlockingIOError:
+                        if time.monotonic() >= deadline:
+                            raise TimeoutError("dual_commutative_write: a live holder held the lock for the whole wait")
+                        time.sleep(delay)
+                        delay = min(delay * 2, 0.05)
+            abandoned = os.pread(fd, 4, 0) == b"HELD"   # last holder never marked FREE: it died
+            os.pwrite(fd, b"HELD", 0)
+            try:
+                yield abandoned
+            finally:
+                os.pwrite(fd, b"FREE", 0)
+                fcntl.flock(fd, fcntl.LOCK_UN)
         finally:
-            fcntl.flock(f, fcntl.LOCK_UN)
-            f.close()
+            os.close(fd)
 
     def _lock_path_for(name):
         import tempfile
